@@ -1,6 +1,6 @@
 node{
    stage('SCM Checkout'){
-     git 'https://github.com/vedantek/jenkins-labs'
+     git 'https://github.com/BarshaMazumdar/HW.git'
    }
    stage('Compile-Package'){
       // Get maven home path
@@ -8,7 +8,7 @@ node{
       sh "${mvnHome}/bin/mvn package"
    }
    stage('Slack Notification'){
-       slackSend baseUrl: 'https://hooks.slack.com/services/',
+       slackSend baseUrl: '',
        channel: '#jenkins',
        color: 'good', 
        message: 'Welcome to Jenkins, Slack!', 
