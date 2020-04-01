@@ -9,7 +9,7 @@ pipeline {
          stage("checkout code") {
             steps {
                 echo 'checkout the code from scm'
-            git 'https://github.com/vedantek/java-maven-war'
+            git 'https://github.com/BarshaMazumdar/HW.git'
             }
         }
         stage('Build') {
@@ -33,10 +33,10 @@ pipeline {
        stage('Slack Notification'){
            steps{
        slackSend baseUrl: 'https://hooks.slack.com/services/',
-       channel: '#cicd',
+       channel: '#jenkins',
        color: 'good', 
        message: 'Welcome to Jenkins, Slack!', 
-       teamDomain: 'vedantek',
+       teamDomain: 'barshagroup',
        tokenCredentialId: 'slack'
            }
    }
