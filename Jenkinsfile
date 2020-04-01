@@ -8,11 +8,11 @@ node{
       sh "${mvnHome}/bin/mvn package"
    }
    stage('Slack Notification'){
-       slackSend baseUrl: '',
+       slackSend baseUrl: 'barshagroup.slack.com',
        channel: '#jenkins',
        color: 'good', 
        message: 'Welcome to Jenkins, Slack!', 
-       teamDomain: 'vedantek',
+       teamDomain: 'barsha',
        tokenCredentialId: 'slack'
    }
 }
